@@ -1,4 +1,4 @@
-# hs-project
+# hakoo
 
 ## Project setup
 ```

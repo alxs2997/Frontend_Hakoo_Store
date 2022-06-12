@@ -1,9 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+        <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <b-collapse id="nav-collapse" is-nav>
+           <b-navbar-nav>
+             <b-nav-item href="#">
+                <router-link to="/">
+                </router-link> 
+              </b-nav-item>
+              <b-nav-item href="#" class="mr-sm-6">
+              </b-nav-item>
+           </b-navbar-nav>
+      <!-- Right aligned nav items -->
+      <b-navbar-nav>
+        <b-nav-item-dropdown text="Integrantes:" right>
+          <b-dropdown-item href="#">David Alexis Gallegos González</b-dropdown-item>
+          <b-dropdown-item href="#">Nestor Wilfredo Chavez Ramirez</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>
