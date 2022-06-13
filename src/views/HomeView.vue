@@ -34,6 +34,58 @@
         <b-button href="/Registro" pill variant="outline-danger">Registrar</b-button>
       </b-carousel-slide>
     </b-carousel>
+    <div>
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <b-card title=" Camisa Pierre Cardin." img-src="https://pierrecardinca.com/large/PCO-1505L.jpg?v=Z7OUEDNNqCK"
+          img-alt="Image" img-top tag="article" style="max-width: 20rem;" class="mb-2">
+          <b-card-text>
+            CAMISA VESTIR OXFORD MANGA LARGA CELESTE
+          </b-card-text>
+          <b-card-text font-color="red">Precio: $26.98</b-card-text>
+         <section>
+          <b-button pill variant="outline-info" v-b-modal.modal-1><i class="fas fa-plus"></i>Añadir al carrito
+            </b-button>
+          </section>
+        </b-card>
+        <b-card title=" Pantalón Pierre Cardin." img-src="https://pierrecardinca.com/thumb/PJG-101SB14.jpg?v=VaSGlaswnEn"
+          img-alt="Image" img-top tag="article" style="max-width: 20rem;" class="mb-2">
+          <b-card-text>
+            101 SKINNY JEANS NUEVO FIT HIGH RISE COLOR AZUL MARINO
+            PJG-101SB10
+          </b-card-text>
+          <b-card-text font-color="red">Precio: $39.98</b-card-text>
+         <section>
+          <b-button pill variant="outline-info" v-b-modal.modal-1><i class="fas fa-plus"></i>Añadir al carrito
+            </b-button>
+          </section>
+        </b-card>
+        <b-card title="Blusa Blue." img-src="https://pierrecardinca.com/large/PBG-008911C.jpg?v=ER2GtOBk48z"
+          img-alt="Image" img-top tag="article" style="max-width: 20rem;" class="mb-2">
+          <b-card-text>
+            BLUSA SPORT BLUE KNIT
+            PBG-008911C
+          </b-card-text>
+          <b-card-text font-color="red">Precio: $13.98</b-card-text>
+         <section>
+          <b-button pill variant="outline-info" v-b-modal.modal-1><i class="fas fa-plus"></i>Añadir al carrito
+            </b-button>
+          </section>
+        </b-card>
+        <b-card title="Billeteras Pierre Cardin." img-src="https://pierrecardinca.com/large/PMA-402802.jpg?v=j49biY0dSvz"
+          img-alt="Image" img-top tag="article" style="max-width: 20rem;" class="mb-2">
+          <b-card-text>
+            NUEVA COLECCIÓN-BILLETERA HOLMES
+            PMA-402802
+          </b-card-text>
+          <b-card-text font-color="red">Precio: $12.98</b-card-text>
+          <section>
+          <b-button pill variant="outline-info" v-b-modal.modal-1><i class="fas fa-plus"></i>Añadir al carrito
+            </b-button>
+          </section>
+        </b-card>
+      </section>
+
+    </div>
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
       <!-- Section: Social media -->
