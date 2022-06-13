@@ -21,37 +21,32 @@
           <b-button squared variant="outline-secondary" href="#">Merch</b-button>
           <b-button squared variant="outline-secondary" id="show-btn" @click="$bvModal.show('bv-modal-example')">Iniciar Sesión</b-button>
           <!-- Modal accion formulario  -->
-          <b-modal id="bv-modal-example" hide-footer class="modal fade" role="dialog">
-            <div class="modal-content">
-              <template class="modal-header">
-                  <h2 text="center">¡Hola de Nuevo!</h2>
-                  <h4 text="center">Bienvenido/a, ingrese sus credenciales</h4>
-              </template>
-              <!-- Modal Body -->
-              <div class="modal-body">
-                <p class="statusMsg"></p>
-                <b-form-group role="form">
+          <b-modal id="bv-modal-example" hide-footer>
+            <template #modal-title>
+              <h2 text="center">¡Hola de Nuevo!</h2>
+            </template>
+            <div class="d-block text-center">
+              <h3>Ingrese sus credenciales</h3>
+              <b-form-group role="form">
                   <div class="form-group">
                     <label for="inputUser">Usuario:</label>
                     <b-input type="text" class="form-control" id="inputName" placeholder="Ingresa tu correo o usuario...">
                     </b-input>
                   </div>
+                  <br>
                   <div class="form-group">
                     <label for="inputpass">Contraseña:</label>
-                    <b-input type="password" name="password" class="form-control" id="inputEmail" placeholder="Enter your email">
+                    <b-input type="password" name="password" class="form-control" id="inputPass" placeholder="Password">
                     </b-input>
                   </div>
                 </b-form-group>
-              </div>
-
-              <!-- Modal Footer -->
-              <div class="modal-footer">
-                <b-link href="/">Cancelar</b-link>
-                |
-                <b-button pill variant="outline-secondary" href="/Registro">Registrarse</b-button>
-                <b-button pill variant="info">Iniciar Sesión</b-button>
-              </div>
             </div>
+            <b-button pill variant="outline-secondary" class="mt-3" block @click="$bvModal.hide('bv-modal-example')">Cancelar</b-button>
+            <div class="modal-footer">
+              <b-button pill variant="secondary" href="/Registro">Registrarse</b-button>
+                <b-button pill variant="outline-info">Iniciar Sesión</b-button>
+            </div>
+            
           </b-modal>
           <!-- Modal Accion formulario  -->
         </b-navbar-nav>

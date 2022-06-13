@@ -53,13 +53,14 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <b-button pill variant="outline-danger">Cancelar</b-button>
+                    <b-button pill variant="outline-danger" href="/">Cancelar</b-button>
                     |
                     <b-button pill variant="outline-success">Registrarme</b-button>
                 </div>
             </form>
         </b-card>
         <br>
+        <img src="https://cdn-images.livecareer.es/pages/curriculum_vitae_de_dependienta_lces_1.jpg">
     </div>
 
 </template>
