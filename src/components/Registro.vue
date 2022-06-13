@@ -1,10 +1,10 @@
-  <div class="Login">
+ <div class="registro">
     <h7>{{ msg }}</h7>
     
   </div>
   <script>
 export default {
-  name: 'Ingresar',
+  name: 'Registrar',
   props: {
     msg: String
   }

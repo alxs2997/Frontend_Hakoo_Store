@@ -8,13 +8,13 @@
         img-src="https://www.esdesignbarcelona.com/sites/default/files/inline-images/Que%CC%81%20es%20el%20estilo%20de%20ropa%20aesthetic%2C%20la%20moda%20de%20la%20que%20todos%20hablan%20%282%29.png"
         caption="¡Bienvenido a:">
         <h1>Hakoo Store!</h1>
-        <b-button pill variant="outline-danger">Registrar</b-button>
+        <b-button  href="/Registro" pill variant="outline-danger">Registrar</b-button>
       </b-carousel-slide>
       <!-- Text slides with image -->
       <b-carousel-slide
         img-src="https://www.esdesignbarcelona.com/sites/default/files/2022-03/Que%CC%81%20es%20el%20estilo%20de%20ropa%20aesthetic%2C%20la%20moda%20de%20la%20que%20todos%20hablan%20%283%29_0.png">
         <h1>¡Aprovecha los beneficios!</h1>
-        <b-button pill variant="outline-danger">Registrar</b-button>
+        <b-button href="/Registro" pill variant="outline-danger">Registrar</b-button>
       </b-carousel-slide>
       <b-carousel-slide>
         <template #img>
@@ -23,7 +23,7 @@
             alt="image slot">
         </template>
         <h1>Registrate y ponte a la moda</h1>
-        <b-button pill variant="outline-danger">Registrar</b-button>
+        <b-button href="/Registro" pill variant="outline-danger">Registrar</b-button>
       </b-carousel-slide>
     </b-carousel>
     <!-- Footer -->
