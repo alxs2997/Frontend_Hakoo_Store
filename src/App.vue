@@ -17,17 +17,15 @@
 
       <b-collapse id="navbar-toggle-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item href="/">Home</b-nav-item>
-          <b-nav-item href="#">Merch</b-nav-item>
-          <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')">Iniciar Sesión</b-button>
+          <b-button squared variant="outline-secondary" href="/">Home</b-button>
+          <b-button squared variant="outline-secondary" href="#">Merch</b-button>
+          <b-button squared variant="outline-secondary" id="show-btn" @click="$bvModal.show('bv-modal-example')">Iniciar Sesión</b-button>
           <!-- Modal accion formulario  -->
           <b-modal id="bv-modal-example" hide-footer class="modal fade" role="dialog">
             <div class="modal-content">
               <template class="modal-header">
                   <h2 text="center">¡Hola de Nuevo!</h2>
-                  <h4 text="center">Bienvenido/a</h4>
-                  <img id="logohome" src="../src/assets/Logos/white_logo_transparent_backgroundHorizontal.png" alt=""
-                  class="mr-sm-2" width="60px" height="40px" center>
+                  <h4 text="center">Bienvenido/a, ingrese sus credenciales</h4>
               </template>
               <!-- Modal Body -->
               <div class="modal-body">
@@ -51,7 +49,7 @@
                 <b-link href="/">Cancelar</b-link>
                 |
                 <b-button pill variant="outline-secondary" href="/Registro">Registrarse</b-button>
-                <b-button pill variant="outline-info">Iniciar Sesión</b-button>
+                <b-button pill variant="info">Iniciar Sesión</b-button>
               </div>
             </div>
           </b-modal>
