@@ -9,9 +9,9 @@
       </b-navbar-toggle>
       <b-navbar-brand href="#">
         <router-link to="/">
-                <img id="logohome" src="../src/assets/Logos/white_logo_transparent_backgroundHorizontal.png" 
-                alt="" class="mr-sm-2" width="60px" height="40px" center>
-                </router-link> 
+          <img id="logohome" src="../src/assets/Logos/white_logo_transparent_backgroundHorizontal.png" alt=""
+            class="mr-sm-2" width="60px" height="40px" center>
+        </router-link>
       </b-navbar-brand>
 
 
@@ -24,6 +24,14 @@
       </b-collapse>
     </b-navbar>
     <router-view></router-view>
+    <footer>
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2022 Copyright:
+        <a class="text-reset fw-bold" href="https://github.com/galle997/Proyecto_Hakoo">Hakoo Store Project</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
   </div>
 </template>
 

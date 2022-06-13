@@ -25,11 +25,12 @@
           <b-button pill variant="primary">Ingresar</b-button>
         </div>
         <br>
-        <a href="" @click="form.type=2" v-if="form.type!=2" >Recuper contraseña</a>
+        <a href="/Login" @click="form.type=2" v-if="form.type!=2" >Recuper contraseña</a>
         |
-        <a href="" @click="form.type=1" v-if="form.type!=1" >Registrarme</a>
+        <a href="/Registro" @click="form.type=1" v-if="form.type!=1" >Registrarme</a>
       </b-form>
     </b-card>
+    <br>
   </div>
 
 </template>
