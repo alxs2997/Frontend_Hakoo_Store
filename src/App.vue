@@ -17,9 +17,9 @@
 
       <b-collapse id="navbar-toggle-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item href="#">Home</b-nav-item>
+          <b-nav-item href="/">Home</b-nav-item>
           <b-nav-item href="#">Merch</b-nav-item>
-          <b-nav-item href="#">Iniciar Sesión</b-nav-item>
+          <b-nav-item href="/Login">Iniciar Sesión</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
