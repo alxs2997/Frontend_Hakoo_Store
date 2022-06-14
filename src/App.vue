@@ -13,7 +13,8 @@
             class="mr-sm-2" width="60px" height="40px" center>
         </router-link>
         |
-        <button type="button" class="btn btn-outline-secondary position-relative" id="show-btn" @click="$bvModal.show('bv-modal-exe')">
+        <button type="button" class="btn btn-outline-secondary position-relative" id="show-btn"
+          @click="$bvModal.show('bv-modal-exe')">
           <i class="fa fa-cart-plus"></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             7
@@ -22,16 +23,16 @@
         </button>
         <b-modal id="bv-modal-exe" hide-footer>
           <template #modal-title>
-              <h2 text="center">Productos Añadidos</h2>
-            </template>
-            <div class="d-block text-center">
-              +
-            </div>
-            <b-button pill variant="outline-secondary" class="mt-3" block @click="$bvModal.hide('bv-modal-exe')">
-              Eliminar</b-button>
-            <div class="modal-footer">
-              <b-button pill variant="outline-success">Pagar</b-button>
-            </div>
+            <h2 text="center">Productos Añadidos</h2>
+          </template>
+          <div class="d-block text-center">
+            +
+          </div>
+          <b-button pill variant="outline-secondary" class="mt-3" block @click="$bvModal.hide('bv-modal-exe')">
+            Eliminar</b-button>
+          <div class="modal-footer">
+            <b-button pill variant="outline-success">Pagar</b-button>
+          </div>
         </b-modal>
       </b-navbar-brand>
 
@@ -49,25 +50,31 @@
             </template>
             <div class="d-block text-center">
               <h3>Ingrese sus credenciales</h3>
-              <b-form-group role="form">
-                <div class="form-group">
-                  <label for="inputUser">Usuario:</label>
-                  <b-input type="text" class="form-control" id="inputName" placeholder="Ingresa tu correo o usuario...">
-                  </b-input>
+              <form v-on:submit.prevent="onSubmit">
+                <b-form-group role="form">
+                  <div class="form-group">
+                    <label for="inputUser">Usuario:</label>
+                    <b-input v-model="correo" type="text" class="form-control" id="inputName"
+                      placeholder="Ingresa tu correo o usuario...">
+                    </b-input>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="inputpass">Contraseña:</label>
+                    <b-input  v-model="password" type="password" name="password" class="form-control" id="inputPass" placeholder="Password">
+                    </b-input>
+                  </div>
+                </b-form-group>
+                <b-button pill variant="outline-secondary" class="mt-3" block
+                  @click="$bvModal.hide('bv-modal-example')">
+                  Cancelar</b-button>
+                <div class="modal-footer">
+                  <b-button pill variant="secondary" href="/Registro">Registrarse</b-button>
+                  <b-button type="submit" class="mt-3" block
+                  @click="$bvModal.hide('bv-modal-example')" pill variant="outline-info">Iniciar Sesión</b-button>
                 </div>
-                <br>
-                <div class="form-group">
-                  <label for="inputpass">Contraseña:</label>
-                  <b-input type="password" name="password" class="form-control" id="inputPass" placeholder="Password">
-                  </b-input>
-                </div>
-              </b-form-group>
-            </div>
-            <b-button pill variant="outline-secondary" class="mt-3" block @click="$bvModal.hide('bv-modal-example')">
-              Cancelar</b-button>
-            <div class="modal-footer">
-              <b-button pill variant="secondary" href="/Registro">Registrarse</b-button>
-              <b-button pill variant="outline-info">Iniciar Sesión</b-button>
+              </form>
+
             </div>
 
           </b-modal>
@@ -86,6 +93,46 @@
     </footer>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      correo: "",
+      password: ""
+    }
+  },
+  methods: {
+    onSubmit(event) {
+      event.preventDefault()
+      this.axios.post('http://localhost:3000/login', {
+        correo: this.correo,
+        password: this.password
+      }).then((response) => {
+        console.log(response);
+        this.$router.push('/')
+      }).catch(function (error) {
+        console.log(error)
+      })
+    },
+
+    onReset(event) {
+      event.preventDefault()
+      // Reset our form values
+      this.form.email = ''
+      this.form.name = ''
+      this.form.food = null
+      this.form.checked = []
+      // Trick to reset/clear native browser form validation state
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+      })
+    }
+  }
+
+}
+
+</script>
 
 <style>
 #app {
