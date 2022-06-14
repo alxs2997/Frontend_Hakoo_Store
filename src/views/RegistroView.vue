@@ -2,20 +2,20 @@
     <div>
         <b-card class="col-md-6 offset-md-3">
             <br>
-            <form class="row g-3 needs-validation" novalidate>
+            <form v-on:submit.prevent="onSubmit" class="row g-3 needs-validation" novalidate>
 
                 <h3>Formulario De Registro</h3>
                 <p>Para seguir las tendencias en moda...</p>
                 <div class="col-md-4">
                     <div class="form-outline">
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="Nombres"
+                        <input type="text" class="form-control" v-model="nombre" id="validationCustom01" placeholder="Nombres"
                             required />
                         <div class="valid-feedback">Looks good!</div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-outline">
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Apellidos"
+                        <input type="text" class="form-control" v-model="apellido" id="validationCustom02" placeholder="Apellidos"
                             required />
                         <div class="valid-feedback">Looks good!</div>
                     </div>
@@ -23,14 +23,14 @@
                 <div class="col-md-4">
                     <div class="input-group form-outline">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername"
+                        <input type="text" class="form-control" v-model="nombre_usuario" id="validationCustomUsername"
                             aria-describedby="inputGroupPrepend" placeholder="Username" required />
                         <div class="invalid-feedback">Please choose a username.</div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-outline">
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="correo@mail.com"
+                        <input type="text" class="form-control" v-model="correo" id="validationCustom02" placeholder="correo@mail.com"
                             required />
                         <label for="validationCustom03" class="form-label"></label>
                         <div class="valid-feedback">Looks good!</div>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-outline">
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Teléfono"
+                        <input type="text" class="form-control" v-model="telefono" id="validationCustom02" placeholder="Teléfono"
                             required />
                         <label for="validationCustom03" class="form-label"></label>
                         <div class="valid-feedback">Looks good!</div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-outline">
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Password"
+                        <input type="text" class="form-control" v-model="password" id="validationCustom02" placeholder="Password"
                             required />
                         <label for="validationCustom03" class="form-label"></label>
                         <div class="valid-feedback">Looks good!</div>
@@ -55,7 +55,7 @@
                 <div class="col-12">
                     <b-button pill variant="outline-danger" href="/">Cancelar</b-button>
                     |
-                    <b-button pill variant="outline-success">Registrarme</b-button>
+                    <b-button type="submit" pill variant="outline-success">Registrarme</b-button>
                 </div>
             </form>
         </b-card>
@@ -73,21 +73,32 @@ export default {
     },
     data() {
         return {
-            form: {
-                email: '',
-                name: '',
-                food: null,
-                checked: []
-            },
-            foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-            show: true
+            nombre:"",
+            apellido:"",
+            nombre_usuario:"",
+            correo:"",
+            telefono:null,
+            password:""
         }
     },
     methods: {
         onSubmit(event) {
             event.preventDefault()
-            alert(JSON.stringify(this.form))
+            this.axios.post('http://localhost:3000/api/cliente/add', {
+                nombre: this.nombre,
+                apellido: this.apellido,
+                nombre_usuario: this.nombre_usuario,
+                correo: this.correo,
+                telefono: this.telefono,
+                password: this.password
+            }).then((response) => {
+                console.log(response);
+                this.$router.push('/')
+            }).catch(function (error) {
+                console.log(error)
+            })
         },
+
         onReset(event) {
             event.preventDefault()
             // Reset our form values
